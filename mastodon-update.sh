@@ -1,4 +1,4 @@
-#!/usr/bin/env -S bash -xe
+#!/usr/bin/env -S bash -e
 
 sudo -u mastodon zsh <<"EOF"
 export RAILS_ENV=production

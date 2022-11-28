@@ -1,4 +1,4 @@
-#!/usr/bin/env -S bash -xe
+#!/usr/bin/env -S bash -e
 
 ROOTDIR=$(dirname "$(readlink -f "$0")")
 source "$ROOTDIR/.env"
