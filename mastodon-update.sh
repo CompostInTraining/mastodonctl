@@ -13,7 +13,8 @@ EOF
 
 sudo systemctl reload mastodon-web.service
 sudo systemctl restart mastodon-sidekiq.service mastodon-streaming.service
-sudo systemctl start elasticsearch
+# Uncomment following line if you run ES on the same server as Mastodon.
+# sudo systemctl start elasticsearch
 
 sudo -u mastodon zsh <<"EOF"
 export RAILS_ENV=production
