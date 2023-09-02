@@ -1,5 +1,9 @@
 #!/usr/bin/env -S bash -e
 
+now=$(date --iso-8601=seconds)
+
+echo $now
+
 sudo -u mastodon zsh <<"EOF"
 export RAILS_ENV=production
 cd /home/mastodon/live
