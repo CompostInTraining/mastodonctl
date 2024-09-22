@@ -7,6 +7,7 @@ echo $now
 # Check rbenv version
 sudo -u mastodon zsh <<"EOF"
 cd /home/mastodon/live
+source /home/mastodon/.zshrc
 ruby_version=$(cat .ruby-version)
 installed_ruby_version=$(rbenv local)
 if [ "$ruby_version" != "$installed_ruby_version" ]; then
