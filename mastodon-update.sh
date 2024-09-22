@@ -13,6 +13,8 @@ if [ "$ruby_version" != "$installed_ruby_version" ]; then
     echo Upgrading Ruby...
     git -C "$(rbenv root)"/plugins/ruby-build pull
     rbenv install "$ruby_version"
+else
+    echo Ruby does not need upgrading.
 fi
 EOF
 
