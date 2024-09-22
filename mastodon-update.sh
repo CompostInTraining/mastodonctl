@@ -22,7 +22,7 @@ cd /home/mastodon/live
 source /home/mastodon/.zshrc
 git pull
 bundle install
-yarn install --pure-lockfile
+yarn install
 echo Running pre-deployment migrations...
 SKIP_POST_DEPLOYMENT_MIGRATIONS=true bundle exec rails db:migrate
 echo Compiling assets...
