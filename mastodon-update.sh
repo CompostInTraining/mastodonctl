@@ -50,3 +50,12 @@ echo Rebuilding feeds...
 ./bin/tootctl feeds clear
 ./bin/tootctl feeds build
 EOF
+
+# Comment the following lines if your instances does not uses ES for search
+sudo -u mastodon zsh <<"EOF"
+export RAILS_ENV=production
+cd /home/mastodon/live
+source /home/mastodon/.zshrc
+echo Deploying search...
+./bin/tootctl search deploy
+EOF
