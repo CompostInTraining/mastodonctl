@@ -4,6 +4,18 @@ now=$(date --iso-8601=seconds)
 
 echo $now
 
+# Check rbenv version
+sudo -u mastodon zsg <<"EOF"
+cd /home/mastodon/live
+ruby_version=$(cat .ruby-version)
+installed_ruby_version=$(rbenv local)
+if [ "$ruby_version" != "$installed_ruby_version" ]; then
+    echo Upgrading Ruby...
+    git -C "$(rbenv root)"/plugins/ruby-build pull
+    rbenv install "$ruby_version"
+fi
+EOF
+
 sudo -u mastodon zsh <<"EOF"
 export RAILS_ENV=production
 cd /home/mastodon/live
